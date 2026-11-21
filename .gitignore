@@ -1,0 +1,28 @@
+# Temporary and local state
+*.log
+*.tmp
+*.bak
+*.db
+*.db-wal
+*.db-shm
+.env
+.vscode/
+.idea/
+
+# Prevent any accidental source code leak
+*.py
+*.pyw
+*.pyc
+__pycache__/
+
+# Configurations et secrets locaux
+*.json
+opencode.json
+mcp_config.json
+
+# Artefacts de build et dumps
+build/
+dist/
+*.spec
+*.o
+*.obj

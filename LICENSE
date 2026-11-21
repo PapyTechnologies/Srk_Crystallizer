@@ -1,0 +1,33 @@
+PROPRIETARY BINARY DISTRIBUTION LICENSE
+
+Copyright (c) 2026 PapyTechnologies. All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+run, and integrate the executable binary ("srk-crystallizer.exe") with Model
+Context Protocol (MCP) clients for personal, academic, or commercial workflows,
+subject to the following conditions:
+
+1. RESTRICTIONS ON MODIFICATION & DECOMPILATION:
+   You may NOT reverse engineer, decompile, disassemble, unpack, modify, or
+   attempt to derive the source code of the binary or its internal algorithms.
+
+2. REDISTRIBUTION:
+   Redistribution of the binary is permitted provided that:
+   a) The binary is distributed in its unmodified form, accompanied by this
+      license notice and the official SHA-256 integrity hash.
+   b) No fee or royalty is charged specifically for the distribution of this
+      Software without express written permission from the author.
+
+3. INTELLECTUAL PROPERTY:
+   All intellectual property rights, trademarks, architecture designs, and
+   benchmarks remain the sole property of PapyTechnologies.
+
+4. DISCLAIMER OF WARRANTY:
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   THE SOFTWARE.
