@@ -1,38 +1,38 @@
-# AUDIT COMPARATIF A/B : SRK-CRYSTALLIZER v2.1 vs FLUX STANDARD
+# COMPARATIVE A/B AUDIT: SRK-CRYSTALLIZER v2.1 vs STANDARD WORKFLOW
 
-Date d'évaluation : 21 Novembre 2026  
-Métriqueur : `tiktoken` (tokenizer officiel `cl100k_base`)  
-Fichier test : Fichier système Python substantiel de 814 lignes (36 547 caractères)  
-Tâche identique : Identification de symbole cible (`refus_ecriture`), extraction chirurgicale, et injection d'une garde de sécurité avec validation AST et tests d'exécution.
+Evaluation Date: November 21, 2026  
+Tokenizer: Official `cl100k_base` via `tiktoken`  
+Target File: Real Python system file of 814 lines (36,547 characters)  
+Identical Task: Target symbol identification (`refus_ecriture`), surgical extraction, and safety guard insertion with AST validation and runtime unit verification.
 
 ---
 
-## 1. TABLEAU COMPARATIF OFFICIEL DES MÉTRIQUES
+## 1. OFFICIAL BENCHMARK METRICS COMPARISON
 
-| MÉTRIQUE / PARAMÈTRE | CONDITION A (STANDARD) | CONDITION B (SRK-CRYSTALLIZER v2.1) | RÉDUCTION / GAIN [MESURÉ] |
+| METRIC / PARAMETER | CONDITION A (STANDARD) | CONDITION B (SRK-CRYSTALLIZER v2.1) | MEASURED REDUCTION [MEASURED] |
 | :--- | :---: | :---: | :---: |
-| **Octets injectés en contexte (In)** | 37 599 octets | 14 789 octets | **-60.67%** |
-| **Octets émis par l'agent (Out)** | 36 847 octets | 61 octets | **-99.83%** |
-| **Tokens Entrée (poids x1.25)** | 9 268 tokens | 4 441 tokens | **-52.08%** |
-| **Tokens Sortie (poids x5.0)** | 9 283 tokens | 15 tokens | **-99.84%** |
-| **Total Tokens bruts** | 18 551 tokens | 4 456 tokens | **-75.98%** |
-| **Unités Quota Pondérées** | **58 000.00** | **5 626.25** | **-90.30%** |
+| **Context Injected Bytes (In)** | 37,599 bytes | 14,789 bytes | **-60.67%** |
+| **Agent Emitted Bytes (Out)** | 36,847 bytes | 61 bytes | **-99.83%** |
+| **Input Tokens (weight x1.25)** | 9,268 tokens | 4,441 tokens | **-52.08%** |
+| **Output Tokens (weight x5.0)** | 9,283 tokens | 15 tokens | **-99.84%** |
+| **Total Raw Tokens** | 18,551 tokens | 4,456 tokens | **-75.98%** |
+| **Weighted Quota Units** | **58,000.00** | **5,626.25** | **-90.30%** |
 
-Formule officielle des Unités Quota Pondérées :
-$$\text{Quota} = (\text{Tokens}_{\text{Entrée}} \times 1.25) + (\text{Tokens}_{\text{Sortie}} \times 5.0)$$
+Official Weighted Quota Units Formula:
+$$\text{Quota} = (\text{Input Tokens} \times 1.25) + (\text{Output Tokens} \times 5.0)$$
 
 ---
 
-## 2. ANALYSE PHYSIQUE DES GAINS
+## 2. PHYSICAL EFFICIENCY ANALYSIS
 
-1. **Sortie chirurgicale (Levier x5.0) :**
-   - En flux standard, l'agent réécrit l'intégralité du fichier (9 283 tokens émis).
-   - Avec `srk_patch`, l'agent émet uniquement le bloc modifié (15 tokens émis), soit une réduction de **-99.84%** sur le poste le plus coûteux du quota.
+1. **Surgical Output (Weight x5.0):**
+   - Standard workflow forces the agent to rewrite the entire file (9,283 tokens emitted).
+   - With `srk_patch`, the agent emits only the modified code lines (15 tokens emitted), delivering a **-99.84%** reduction on the costliest token category.
 
-2. **Entrée contractuelle (Levier x1.25) :**
-   - En flux standard, l'agent ingère le fichier complet (9 268 tokens).
-   - Avec `srk_map` + `srk_read`, l'agent ingère la carte compacte des signatures et uniquement le corps du symbole ciblé (4 441 tokens), soit une réduction de **-52.08%**.
+2. **Contract-Based Input (Weight x1.25):**
+   - Standard workflow consumes the entire raw file into context (9,268 tokens).
+   - With `srk_map` + `srk_read`, the agent digests the compact signature contract and only the targeted symbol body (4,441 tokens), delivering a **-52.08%** reduction.
 
-3. **Validation & Résilience :**
-   - Zéro régression syntaxique (compilation AST validée à 0 `SyntaxError`).
-   - Intégrité logique vérifiée par exécution réelle unitaire.
+3. **Validation & Resilience:**
+   - Zero syntax regressions (in-memory AST compilation passed with 0 `SyntaxError`).
+   - Logical integrity verified through isolated runtime execution.
