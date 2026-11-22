@@ -103,6 +103,19 @@ The standalone executable communicates over standard `stdio` JSON-RPC.
 
 ---
 
+## 🤖 Autonomous Agent Integration (Recommended System Policy)
+
+To ensure your LLM agent (OpenCode, Claude Desktop, Cursor) systematically enforces the 50-75% token reduction and avoids ingesting raw files, append this directive to your system prompt or `.opencode/instructions.md`:
+
+> **Surgical Code Policy (STRICT):**  
+> For all file reading, structural inspection, and source modification tasks:  
+> 1. NEVER use raw full-file read tools on large or unfamiliar files.  
+> 2. ALWAYS call `srk_map` first to extract the AST topology and symbol line ranges.  
+> 3. ALWAYS use `srk_read` strictly scoped to the targeted line intervals.  
+> 4. ALWAYS use `srk_patch` for atomic, SHA-validated disk mutations.
+
+---
+
 ## 🔒 Multiplatform Binary Integrity & Verification
 
 Every official release binary is strictly sealed, compiled natively with Link-Time Optimization (LTO), and deterministically signed:
