@@ -103,17 +103,25 @@ The standalone executable communicates over standard `stdio` JSON-RPC.
 
 ---
 
-## 🔒 Binary Integrity & Verification
+## 🔒 Multiplatform Binary Integrity & Verification
 
-Every official release binary is strictly sealed and deterministically verifiable:
+Every official release binary is strictly sealed, compiled natively with Link-Time Optimization (LTO), and deterministically signed:
 
-- **Target Binary:** `bin/srk-crystallizer.exe`
-- **Architecture:** x86-64 PE32+ Standalone Executable (`onefile`, LTO, Stripped)
-- **Size:** 23,931,904 bytes (22.82 MB)
-- **Official SHA-256 Integrity Hash:**
-  ```text
-  89787a6dc5954054f3e037dd1b37a719f4c0499fd70da0278d82e626dbe87294
-  ```
+| Platform | Target Binary | Architecture | Size | Official SHA-256 Checksum |
+| :--- | :--- | :--- | :--- | :--- |
+| **Windows** | [`srk-crystallizer.exe`](https://github.com/PapyTechnologies/Srk_Crystallizer/releases/download/v2.1.0/srk-crystallizer.exe) | x86-64 PE32+ Standalone | 23.9 MB | `89787a6dc5954054f3e037dd1b37a719f4c0499fd70da0278d82e626dbe87294` |
+| **Linux** | [`srk-crystallizer-linux`](https://github.com/PapyTechnologies/Srk_Crystallizer/releases/download/v2.1.0/srk-crystallizer-linux) | x86-64 ELF Standalone | 41.6 MB | `f3ed25bdd61aa923bbfabbd30f7a5e4f2457a32e07bbde27f3b7a42c1d2ee3eb` |
+| **macOS** | [`srk-crystallizer-macos`](https://github.com/PapyTechnologies/Srk_Crystallizer/releases/download/v2.1.0/srk-crystallizer-macos) | ARM64 Mach-O (Apple Silicon) | 22.3 MB | `356261c15a2677586b34e5d5edc9eeed25f0f1455018e2e0d2a9d6bcef52f85d` |
+
+Verify integrity on your local machine:
+```bash
+# Linux / macOS
+shasum -a 256 srk-crystallizer-linux
+shasum -a 256 srk-crystallizer-macos
+
+# Windows PowerShell
+Get-FileHash -Algorithm SHA256 bin/srk-crystallizer.exe
+```
 
 ---
 

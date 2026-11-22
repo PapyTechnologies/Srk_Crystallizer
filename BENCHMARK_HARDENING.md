@@ -35,3 +35,15 @@ Actual CPU execution time measurements captured during test runs:
 2. **Desynchronization Prevention (Stale SHA):** Concurrent collision is physically impossible; the first committed write instantly invalidates all competing stale patches.
 3. **Multi-Encoding Resilience:** Strict preservation of non-ASCII strings (Arabic, accented characters, emojis) with zero parasite diffs across the remainder of the file.
 4. **Local Sub-Metric Latency:** Median latencies of 74.97 ms for mapping/reading and 166.74 ms for atomic patching, removing CPU bottlenecks for coding agents.
+
+---
+
+## 4. MULTIPLATFORM NATIVE BINARY INTEGRITY (v2.1.0)
+
+All standalone binaries are cross-compiled in isolated GitHub Actions CI runners using Nuitka C (`--lto=yes`, `--strip=yes`, `--onefile`) without any source code leakage.
+
+| OS / Target | Format | Architecture | Binary Checksum (SHA-256) |
+| :--- | :--- | :--- | :--- |
+| **Windows** | Portable Executable (`.exe`) | x86-64 PE32+ | `89787a6dc5954054f3e037dd1b37a719f4c0499fd70da0278d82e626dbe87294` |
+| **Linux** | ELF Standalone | x86-64 POSIX | `f3ed25bdd61aa923bbfabbd30f7a5e4f2457a32e07bbde27f3b7a42c1d2ee3eb` |
+| **macOS** | Mach-O Standalone | ARM64 Apple Silicon | `356261c15a2677586b34e5d5edc9eeed25f0f1455018e2e0d2a9d6bcef52f85d` |
